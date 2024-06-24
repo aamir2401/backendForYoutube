@@ -8,7 +8,7 @@ const connectDatabase = async () =>
             console.log(` \n Database connected!! to HOST ${connectionInstance.Connection.host}` );
         } catch (error) 
         {
-            console.log("Error", error)
+            console.log("Error in the src/db/database", error)
             process.exit(1)
         }
     }
