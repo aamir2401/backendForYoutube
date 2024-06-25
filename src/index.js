@@ -1,7 +1,20 @@
 import dotenv from "dotenv"
 import connectDatabase from "./db/database.js";
+import express from "express"
+const app = express()
 dotenv.config({path: './env'})
 connectDatabase()
+.then( () =>
+{
+    app.listen(process.env.PORT, (req,res) =>
+    {
+        res.send(`App is listning to PORT ${process.env.PORT}`)
+    })
+})
+.catch( (error) =>
+{
+    console.error("Error countered!!", error)
+})
 
 
 
